@@ -1,0 +1,182 @@
+/* * {
+   margin: 0;
+   padding: 0;
+}
+body {
+   background-color: grey;
+   font-family: "Times New Roman", Times, serif;
+} */
+
+.heading {
+   height: 100px;
+   margin: 10px;
+   padding: 20px;
+   background-color: rgba(14, 15, 14, 0.795);
+   color: antiquewhite;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.under-heading {
+   height: calc(100% - 100px);
+   width: 100%;
+   margin: 10px;
+   display: flex;
+   float: left;
+   background-color: rgba(0, 0, 0, 0.103);
+}
+.chat-side {
+   margin: 10px;
+   padding: 20px;
+   width: 20%;
+   background-color: #070230;
+   color: #ffffff;
+}
+.chat-main {
+   margin: 10px;
+   padding: 20px;
+   width: 80%;
+   background-color: rgb(231, 229, 225);
+}
+.input-area {
+   width: 100%;
+   display: flex;
+   float: left;
+}
+.form-div {
+   width: 80%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.location-div {
+   width: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.input-styling {
+   width: 70%;
+   padding: 5px;
+   font-size: 16px;
+   border-width: 1px;
+   border-color: #cccccc;
+   background-color: #ffffff;
+   color: #000000;
+   border-style: solid;
+   border-radius: 0px;
+   box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+   text-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+}
+.input-styling:focus {
+   outline: none;
+}
+.button-styling {
+   box-shadow: 0px 10px 14px -7px #276873;
+   background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+   background-color: #599bb3;
+   border-radius: 8px;
+   display: inline-block;
+   cursor: pointer;
+   color: #ffffff;
+   font-family: Arial;
+   font-size: 15px;
+   font-weight: bold;
+   padding: 8px 20px;
+   text-decoration: none;
+   text-shadow: 0px 1px 0px #3d768a;
+}
+.button-styling:hover {
+   background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+   background-color: #408c99;
+}
+.button-styling:active {
+   position: relative;
+   top: 1px;
+}
+
+#mainForm {
+   display: flex;
+   float: left;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+   margin: 5px;
+}
+
+#messages {
+   font-size: large;
+   line-height: 2em;
+   color: rgb(9, 104, 187);
+   padding: 20px;
+   margin: 10px;
+}
+
+/* index file styling  */
+label {
+   color: white;
+   font-size: medium;
+   font-weight: bold;
+}
+
+.sidebar-template {
+   color: aliceblue;
+}
+
+/* New index file css  */
+body {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+   background: #181818;
+}
+.box {
+   width: 400px;
+   padding: 40px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: #313030;
+   text-align: center;
+   border-radius: 20px;
+}
+.box h1 {
+   color: white;
+   text-transform: uppercase;
+   font-weight: 500;
+}
+.box input[type="text"] {
+   background: none;
+   display: block;
+   margin: 20px auto;
+   text-align: center;
+   border: 2px solid #3498db;
+   padding: 14px 10px;
+   width: 200px;
+   outline: none;
+   color: white;
+   transition: 0.25s;
+   border-radius: 10px;
+}
+.box input[type="text"]:focus {
+   width: 280px;
+   border-color: white;
+}
+.box input[type="submit"] {
+   background: none;
+   display: block;
+   margin: 20px auto;
+   text-align: center;
+   border: 2px solid #2e72cc;
+   padding: 14px 40px;
+   outline: none;
+   color: white;
+   transition: 0.25s;
+   cursor: pointer;
+}
+.box input[type="submit"]:hover {
+   background: #2e72cc;
+}
