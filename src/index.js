@@ -40,13 +40,13 @@ io.on("connection", (socket) => {
 
    socket.on("chatMessage", (message, callback) => {
       const user = getUser(socket.id);
-      io.to(user.room).emit("message", generateMessage(message, user.username));
+      socket.broadcast.to(user.room).emit("message", generateMessage(message, user.username));
       callback("delivered");
    });
 
    socket.on("location", (lat, lon, callback) => {
       const user = getUser(socket.id);
-      io.to(user.room).emit("locationData", generatLocationeMessage(`https://google.com/maps?q=${lat},${lon}`, user.username));
+      socket.broadcast.to(user.room).emit("locationData", generatLocationeMessage(`https://google.com/maps?q=${lat},${lon}`, user.username));
       callback();
    });
 

@@ -1,33 +1,30 @@
 const socket = io();
 
+// //DOM elements variables
+// const $mainForm = document.querySelector("#mainForm");
+// const $mainFormInput = $mainForm.querySelector("input");
+// const $mainFormButton = $mainForm.querySelector("button");
+// const $locationButton = document.querySelector("#location-button");
+// const $messages = document.querySelector("#messages");
+// //Templates
+// const messageTemplate = document.querySelector("#message-template").innerHTML;
+// const locationMessageTemplate = document.querySelector("#location-message-template").innerHTML;
+// const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
+
+//DOM elements variables
 const $mainForm = document.querySelector(".form");
 const $mainFormInput = $mainForm.querySelector("input");
 const $mainFormButton = $mainForm.querySelector("button");
 const $locationButton = document.querySelector(".location");
-const $messages = document.querySelector(".message-area");
+const $messages = document.querySelector(".main-chat");
 //Templates
 const messageTemplate = document.querySelector("#message-template").innerHTML;
 const locationMessageTemplate = document.querySelector("#location-message-template").innerHTML;
-const usernameTemplate = document.querySelector("#username-template").innerHTML;
-const roomTemplate = document.querySelector("#room-template").innerHTML;
-const myMessageTemplate = document.querySelector("#my-message-template").innerHTML;
+const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
+const roomTemplate = document.querySelector("room-template").innerHTML;
 
 //Query string parser
 const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true });
-
-//Autoscroll function description
-const autoScroll = () => {
-   const $newMessage = $messages.lastElementChild;
-   const newMessageHeight = $newMessage.offsetHeight + parseInt(getComputedStyle($newMessage).marginBottom);
-   const visibleHeight = $messages.offsetHeight;
-   const containerHeight = $messages.scrollHeight;
-   const scrollOffset = $messages.scrollTop + visibleHeight;
-
-   if (containerHeight - newMessageHeight <= scrollOffset) {
-      $messages.scrollTop = $messages.scrollHeight;
-   }
-   return;
-};
 
 //Message listener
 socket.on("message", (messageObject) => {
@@ -37,6 +34,7 @@ socket.on("message", (messageObject) => {
       timeStamp: moment(messageObject.time).format("h:mm A"),
    });
    $messages.insertAdjacentHTML("beforeend", html);
+   console.log(messageObject.text, messageObject.username);
 });
 
 //Location listener
@@ -47,11 +45,12 @@ socket.on("locationData", (locationData) => {
       timeStamp: moment(locationData.time).format("h:mm A"),
    });
    $messages.insertAdjacentHTML("beforeend", html);
+   console.log(locationData.url.locationData.username);
 });
 
 //sidebar users and room details listener
 socket.on("roomData", ({ room, users }) => {
-   const html = Mustache.render(usernameTemplate, {
+   const html = Mustache.render(sidebarTemplate, {
       users: users,
    });
    document.querySelector(".online-members").innerHTML = html;
@@ -59,6 +58,7 @@ socket.on("roomData", ({ room, users }) => {
       room: room,
    });
    document.querySelector(".room").innerHTML = html2;
+   console.log(room, users);
 });
 
 //Form data sending code or message sending code
@@ -68,18 +68,12 @@ $mainForm.addEventListener("submit", (e) => {
    $mainFormButton.setAttribute("disabled", "disabled");
    const message = $mainFormInput.value;
 
-   //Appending my message to the right without sending it to me(handlilng it on the front-end side )
-   const myHtml = Mustache.render(myMessageTemplate, {
-      message: message,
-      username: username,
-      timeStamp: moment(new Date().getTime()).format("h:mm A"),
-   });
-   $messages.insertAdjacentHTML("beforeend", myHtml);
-
    socket.emit("chatMessage", message, (msg) => {
       $mainFormButton.removeAttribute("disabled");
       $mainFormInput.value = "";
       $mainFormInput.focus();
+
+      console.log(msg);
    });
 });
 

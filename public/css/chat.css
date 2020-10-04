@@ -1,0 +1,217 @@
+/* 212121 - black
+323232 - light black
+0d7377 - dark blue
+14ffec - light blue  */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Montserrat", sans-serif;
+   background: #212121;
+}
+
+/* header section with logo, heading , room details  */
+header {
+   height: 10vh;
+   width: 100%;
+   position: fixed;
+   background-color: #212121;
+   z-index: 1;
+   display: flex;
+   align-items: center;
+   color: white;
+   border-bottom: 2px solid white;
+}
+.logo {
+   flex: 1;
+   display: flex;
+   align-items: center;
+}
+.heading {
+   flex: 1;
+   text-align: center;
+   font-weight: 500;
+   text-shadow: 0 2px 5px white;
+   font-size: 20px;
+   color: #14ffec;
+}
+.room {
+   padding: 5px;
+   flex: 1;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+.room-display {
+   text-transform: uppercase;
+   height: 40px;
+   width: auto;
+   border: 2px solid white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.logo,
+.logo img {
+   height: 10vh;
+   padding: 5px;
+}
+
+/* main area  */
+.main-area {
+   display: flex;
+}
+
+/* sidebar , online members, locaiton button section  */
+.sidebar {
+   width: 250px;
+   height: 100vh;
+   border-right: 2px solid white;
+   background-color: #0d7377;
+   position: fixed;
+   top: 10vh;
+   left: 0;
+   z-index: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.online-heading {
+   height: 7vh;
+   text-align: center;
+   width: 100%;
+   color: white;
+   border-bottom: 2px solid white;
+}
+
+.online-heading h3 {
+   margin: 10px auto;
+}
+
+.list-items {
+   margin: 10px auto;
+   list-style: none;
+   text-transform: uppercase;
+   line-height: 30px;
+   color: white;
+}
+
+.location-div {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: center;
+   position: fixed;
+   bottom: 10px;
+   left: 55px;
+}
+
+.location {
+   height: 7vh;
+   width: 150px;
+   background: #14ffec;
+   color: black;
+   border: none;
+}
+
+/* main chat section with message and location sharing  */
+.main-chat {
+   margin: 10vh 0 0 250px;
+   text-align: center;
+   flex: 1;
+   color: white;
+   text-align: left;
+   /* height: 200vh; */
+}
+
+.message-area {
+   width: 90%;
+   margin: 20px auto;
+}
+
+.template-div {
+   background: transparent;
+   line-height: 20px;
+   margin-bottom: 20px;
+   animation: message 0.5s ease;
+}
+
+.other-message {
+   display: flex;
+   justify-content: flex-start;
+}
+
+.my-message {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.my-user-det {
+   color: #c0ff14;
+   font-size: 12px;
+   font-weight: 600;
+   opacity: 0.8;
+}
+
+.user-det {
+   color: #14ffec;
+   font-size: 12px;
+   font-weight: 600;
+   opacity: 0.8;
+}
+
+.act-message {
+   font-size: 20px;
+}
+
+/* search bar and send button fixed at bottom  */
+.search-bar {
+   display: flex;
+   margin-top: 2px solid white;
+   position: fixed;
+   bottom: 5px;
+   right: 5px;
+   height: 7vh;
+   width: 83%;
+   justify-content: flex-end;
+}
+
+.form {
+   position: relative;
+   display: flex;
+   width: 100%;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.form button {
+   height: 100%;
+   width: 150px;
+   background: #14ffec;
+   color: #212121;
+   font-size: 14px;
+   border: none;
+}
+.form input[type="text"] {
+   flex: 1;
+   height: 100%;
+   background: #212121;
+   border: 1px solid white;
+   padding: 12px 16px;
+   color: white;
+}
+
+@keyframes message {
+   0% {
+      opacity: 0;
+      transform: translateY(10px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0px);
+   }
+}

@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="css/style.css" />
+      <meta charset="utf-8" />
       <title>Join</title>
+      <link rel="stylesheet" href="css/style.css" />
    </head>
    <body>
-      <div>
-         <form style="display: grid; grid-template-rows: 1fr" action="chat.html">
-            <label>Display name</label>
-            <input class="input-styling" placeholder="Display Name" type="text" name="username" id="" required />
-            <label>Room </label>
-            <input class="input-styling" placeholder="Room" type="text" name="room" id="" required />
-            <button class="button-styling">Join</button>
-         </form>
-      </div>
+      <form class="box" action="./chat.html">
+         <h1>Join The chat</h1>
+         <input type="text" name="username" placeholder="Username" required autocomplete="off" />
+         <input type="text" name="room" placeholder="Room" required autocomplete="off" />
+         <input type="submit" name="" value="Join" />
+      </form>
    </body>
 </html>
