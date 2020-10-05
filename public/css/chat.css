@@ -30,6 +30,24 @@ header {
    display: flex;
    align-items: center;
 }
+.leave-room {
+   margin: 0 0 0 10px;
+   display: flex;
+}
+.leave-room a {
+   height: 50px;
+   width: 150px;
+   text-decoration: none;
+   text-transform: uppercase;
+   border: 2px solid white;
+   background-color: #14ffec;
+   color: black;
+   font-size: 14px;
+   font-weight: 500;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 .heading {
    flex: 1;
    text-align: center;
@@ -120,7 +138,7 @@ header {
 
 /* main chat section with message and location sharing  */
 .main-chat {
-   margin: 10vh 0 0 250px;
+   margin: 10vh 0 10vh 250px;
    text-align: center;
    flex: 1;
    color: white;
