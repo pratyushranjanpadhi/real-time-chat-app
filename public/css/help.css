@@ -1,7 +1,3 @@
-/* 212121 - black
-323232 - light black
-0d7377 - dark blue
-14ffec - light blue  */
 * {
    margin: 0;
    padding: 0;
@@ -48,7 +44,6 @@ body {
 }
 
 section {
-   /* display: flex; */
    width: 70%;
    margin: auto;
    color: white;
