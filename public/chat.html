@@ -11,6 +11,7 @@
       <header>
          <div class="logo">
             <img src="./image/logo.png" alt="logo" />
+            <div class="leave-room"><a href="/">Leave Room</a></div>
          </div>
          <div class="heading"><h3>Easy Chat</h3></div>
          <div class="room"></div>
@@ -41,7 +42,7 @@
             <div class="template-div">
                <p class="user-det">
                   <span>{{username}}</span>
-                  <span>{{timeStamp}}</span>
+                  <span class="timeStamp">{{timeStamp}}</span>
                </p>
                <p class="act-message">{{message}}</p>
             </div>
@@ -52,7 +53,7 @@
             <div class="template-div">
                <p class="my-user-det">
                   <span>{{username}}</span>
-                  <span>{{timeStamp}}</span>
+                  <span class="timeStamp">{{timeStamp}}</span>
                </p>
                <p class="act-message">{{message}}</p>
             </div>
@@ -61,7 +62,7 @@
       <!-- location message template -->
       <script id="location-message-template" type="text/html">
          <div class="template-div">
-            <p class="user-det"><span>{{username}}</span><span>{{timeStamp}}</span></p>
+            <p class="user-det"><span>{{username}}</span><span class="timeStamp">{{timeStamp}}</span></p>
             <p><a style="color : white;" target="_blank" href="{{mapdata}}">My Location</a></p>
          </div>
       </script>

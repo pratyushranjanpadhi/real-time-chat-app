@@ -1,0 +1,12 @@
+1. Delete this file after usage
+
+2.Update README.md
+
+3. change the timestamp styling 
+
+4. Enable auto scrollling
+
+5. css styling to look good(buttons, forms, etc)
+
+6. place my user details at right end , it should not move if the message is too long
+ 
