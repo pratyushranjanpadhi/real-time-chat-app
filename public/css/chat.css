@@ -1,80 +1,134 @@
-* {
+:root {
+   --color-primary: #3498db;
+}
+
+*,
+*::before,
+*::after {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
 
-body {
+html {
+   font-size: 62.5%;
    font-family: "Montserrat", sans-serif;
+}
+
+body {
    background: #212121;
 }
 
+/* Animations */
+@keyframes message {
+   0% {
+      opacity: 0;
+      transform: translateY(1rem);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@keyframes moveGradient {
+   50% {
+      background-position: 100% 50%;
+   }
+}
 /* header section with logo, heading , room details  */
-header {
-   height: 10vh;
-   width: 100%;
-   position: fixed;
-   background-color: #212121;
-   z-index: 1;
+.header {
+   padding: 1rem 2rem;
+   background-color: #221e1e;
    display: flex;
    align-items: center;
-   color: white;
-   border-bottom: 2px solid white;
+   justify-content: space-between;
 }
 .logo {
-   flex: 1;
+   height: 6rem;
+   width: 6rem;
+   padding: 0.5rem;
+}
+.logo img {
+   height: 100%;
+}
+.nav {
+   padding: 1rem;
+   margin-left: auto;
+}
+
+.nav-list {
+   list-style: none;
    display: flex;
-   align-items: center;
+}
+
+.nav-item:not(:last-child) {
+   margin-right: 2rem;
+}
+
+.nav-link {
+   display: inline-block;
+   text-transform: uppercase;
+   text-decoration: none;
+   padding: 1rem 2rem;
+   font-size: 1.2rem;
+   font-weight: 700;
+   color: var(--color-primary);
+   transition: all 0.2s;
+}
+
+.nav-link:hover {
+   color: #fff;
 }
 .leave-room {
-   margin: 0 0 0 10px;
+   margin: 0 0 0 1rem;
    display: flex;
 }
 .leave-room a {
-   height: 50px;
-   width: 150px;
+   height: 5rem;
+   width: 15rem;
    text-decoration: none;
    text-transform: uppercase;
    border: 2px solid white;
    background-color: #14ffec;
    color: black;
-   font-size: 14px;
+   font-size: 1.4rem;
    font-weight: 500;
    display: flex;
    justify-content: center;
    align-items: center;
 }
 .heading {
-   flex: 1;
    text-align: center;
+   display: inline-block;
    font-weight: 500;
    text-shadow: 0 2px 5px white;
-   font-size: 20px;
+   font-size: 2rem;
    color: #14ffec;
 }
-.room {
-   padding: 5px;
-   flex: 1;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: flex-end;
-}
+
 .room-display {
    text-transform: uppercase;
-   height: 40px;
+   /* height: 4rem; */
+   padding: 1rem 2rem;
+   font-size: 1.2rem;
+   color: #fff;
    width: auto;
-   border: 2px solid white;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+   border-radius: 3px;
+   border: 1px solid #fff;
 }
-.logo,
-.logo img {
-   height: 10vh;
-   padding: 5px;
+.btn {
+   text-transform: uppercase;
+   text-decoration: none;
+   padding: 1rem 2rem;
+   font-size: 1.2rem;
+   background-color: var(--color-primary);
+   color: #fff;
+   width: auto;
+   border-radius: 3px;
+   border: 1px solid #fff;
+   margin-right: 2rem;
 }
-
 /* main area  */
 .main-area {
    display: flex;
@@ -82,12 +136,12 @@ header {
 
 /* sidebar , online members, locaiton button section  */
 .sidebar {
-   width: 250px;
+   width: 25rem;
    height: 100vh;
    border-right: 2px solid white;
    background-color: #0d7377;
    position: fixed;
-   top: 10vh;
+   top: 8rem;
    left: 0;
    z-index: 1;
    display: flex;
@@ -103,14 +157,15 @@ header {
 }
 
 .online-heading h3 {
-   margin: 10px auto;
+   margin: 1rem auto;
 }
 
 .list-items {
-   margin: 10px auto;
+   font-size: 1.6rem;
+   margin: 1rem auto;
    list-style: none;
    text-transform: uppercase;
-   line-height: 30px;
+   line-height: 3rem;
    color: white;
 }
 
@@ -120,13 +175,13 @@ header {
    justify-content: flex-end;
    align-items: center;
    position: fixed;
-   bottom: 10px;
-   left: 55px;
+   bottom: 1rem;
+   left: 5.5rem;
 }
 
 .location {
    height: 7vh;
-   width: 150px;
+   width: 15rem;
    background: #14ffec;
    color: black;
    border: none;
@@ -134,7 +189,7 @@ header {
 
 /* main chat section with message and location sharing  */
 .main-chat {
-   margin: 10vh 0 10vh 250px;
+   margin: 10vh 0 10vh 25rem;
    text-align: center;
    flex: 1;
    color: white;
@@ -143,13 +198,13 @@ header {
 
 .message-area {
    width: 90%;
-   margin: 20px auto;
+   margin: 2rem auto;
 }
 
 .template-div {
    background: transparent;
-   line-height: 20px;
-   margin-bottom: 20px;
+   line-height: 2rem;
+   margin-bottom: 2rem;
    animation: message 0.5s ease;
 }
 
@@ -165,7 +220,7 @@ header {
 
 .my-user-det {
    color: #c0ff14;
-   font-size: 12px;
+   font-size: 1.2rem;
    font-weight: 600;
    opacity: 0.8;
    display: flex;
@@ -174,17 +229,17 @@ header {
 
 .user-det {
    color: #14ffec;
-   font-size: 12px;
+   font-size: 1.2rem;
    font-weight: 600;
    opacity: 0.8;
 }
 .timeStamp {
-   margin-left: 5px;
-   font-size: 10px;
+   margin-left: 0.5rem;
+   font-size: 1rem;
    opacity: 0.9;
 }
 .act-message {
-   font-size: 20px;
+   font-size: 2rem;
 }
 
 /* search bar and send button fixed at bottom  */
@@ -192,8 +247,8 @@ header {
    display: flex;
    margin-top: 2px solid white;
    position: fixed;
-   bottom: 5px;
-   right: 5px;
+   bottom: 0.5rem;
+   right: 0.5rem;
    height: 7vh;
    width: 83%;
    justify-content: flex-end;
@@ -209,10 +264,10 @@ header {
 
 .form button {
    height: 100%;
-   width: 150px;
+   width: 15rem;
    background: #14ffec;
    color: #212121;
-   font-size: 14px;
+   font-size: 1.4rem;
    border: none;
 }
 .form input[type="text"] {
@@ -220,17 +275,6 @@ header {
    height: 100%;
    background: #212121;
    border: 1px solid white;
-   padding: 12px 16px;
+   padding: 1.2rem 1.6rem;
    color: white;
-}
-
-@keyframes message {
-   0% {
-      opacity: 0;
-      transform: translateY(10px);
-   }
-   100% {
-      opacity: 1;
-      transform: translateY(0px);
-   }
 }

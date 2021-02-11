@@ -1,44 +1,66 @@
-body {
+:root {
+   --color-primary: #3498db;
+}
+
+*,
+*::before,
+*::after {
    margin: 0;
    padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
    font-family: "Montserrat", sans-serif;
+}
+
+body {
    background: #181818;
 }
 .header {
-   width: 100%;
-   height: 10vh;
-   background-color: #212121;
+   padding: 1rem 2rem;
+   background-color: #221e1e;
    display: flex;
    align-items: center;
-   box-sizing: border-box;
 }
 .logo {
-   flex: 1;
-   height: 100%;
-   width: 50px;
+   height: 6rem;
+   width: 6rem;
+   padding: 0.5rem;
 }
 .logo img {
    height: 100%;
-   width: 80px;
-   padding: 5px;
 }
 .nav {
-   flex: 1;
+   padding: 1rem;
+   margin-left: auto;
+}
+
+.nav-list {
+   list-style: none;
    display: flex;
-   justify-content: flex-end;
-   padding: 10px;
 }
-.nav a {
-   border: 1px solid white;
-   font-size: 24px;
-   color: white;
-   padding: 5px;
+
+.nav-item:not(:last-child) {
+   margin-right: 2rem;
+}
+
+.nav-link {
+   display: inline-block;
+   text-transform: uppercase;
    text-decoration: none;
-   text-align: center;
-   margin: auto 0px;
-   height: 30px;
-   width: 100px;
+   padding: 1rem 2rem;
+   font-size: 1.2rem;
+   font-weight: 700;
+   color: var(--color-primary);
+   transition: all 0.2s;
 }
+
+.nav-link:hover {
+   color: #fff;
+}
+
 /* index file styling  */
 label {
    color: white;
@@ -53,15 +75,15 @@ label {
 /* New index file css  */
 
 .box {
-   width: 400px;
-   padding: 40px;
+   width: 50rem;
+   padding: 4rem;
    position: absolute;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
    background: #313030;
    text-align: center;
-   border-radius: 20px;
+   border-radius: 2rem;
 }
 .box h1 {
    color: white;
@@ -71,32 +93,33 @@ label {
 .box input[type="text"] {
    background: none;
    display: block;
-   margin: 20px auto;
+   margin: 2rem auto;
    text-align: center;
-   border: 2px solid #3498db;
-   padding: 14px 10px;
-   width: 200px;
+   border: 2px solid var(--color-primary);
+   padding: 1.4rem 1rem;
+   width: 24rem;
    outline: none;
    color: white;
    transition: 0.25s;
-   border-radius: 10px;
+   border-radius: 1rem;
 }
 .box input[type="text"]:focus {
-   width: 280px;
+   width: 32rem;
    border-color: white;
 }
 .box input[type="submit"] {
    background: none;
    display: block;
-   margin: 20px auto;
+   margin: 2rem auto;
    text-align: center;
-   border: 2px solid #2e72cc;
-   padding: 14px 40px;
+   border: 2px solid var(--color-primary);
+   border-radius: 3px;
+   padding: 1rem 3rem;
    outline: none;
    color: white;
    transition: 0.25s;
    cursor: pointer;
 }
 .box input[type="submit"]:hover {
-   background: #2e72cc;
+   background: var(--color-primary);
 }
