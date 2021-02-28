@@ -21,11 +21,11 @@
 
 -  Remember the username and room both are not case sensitive
 
--  Than means "bangalorean" , "Bangalorean", and "BANGALOREAN" are all sama
+-  Than means "bangalorean" , "Bangalorean", and "BANGALOREAN" are all same
 
 ### Technologies
 
-All the technoloies that are used here are :
+All the technologies that are used here are :
 
 -  NodeJs - Evented I/O for the backend!
 -  Express - Fast node.js network app framework
@@ -47,6 +47,6 @@ $ npm run dev/ npm start
 
 #### CONTRIBUTIONS
 
-> This app is not very complicated which maked it easy to contribute to. Also considering the HACKTOBERFEST in mind i'm maintaing this repository and will be updating issues.
+> This app is not very complicated which maed it easy to contribute to. Also considering the HACKTOBERFEST in mind i'm maintaing this repository and will be updating issues.
 
 > So feel free to submit a pull request(follow the abouve instructions)
